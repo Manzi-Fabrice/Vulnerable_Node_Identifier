@@ -23,7 +23,7 @@ def create_network_graph_from_csv(csv_path, min_flow_duration=10):
     df = pd.read_csv(csv_path)
     df.columns = df.columns.str.strip()
 
-    # Filtering soutshort lived connections
+    # Filtering short-lived connections
     filtered_df = df[df['Flow Duration'] >= min_flow_duration]
 
     for _, row in filtered_df.iterrows():

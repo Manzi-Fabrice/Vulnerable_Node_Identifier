@@ -27,7 +27,7 @@ def create_network_graph_from_csv(csv_path, min_flow_duration=10):
     filtered_df = df[df['Flow Duration'] >= min_flow_duration]
 
     for _, row in filtered_df.iterrows():
-        src_port = row['Destination Port']
+        src_port = row['Source Port']
         dest_port = row['Destination Port']
 
         fwd_packets = int(row['Total Fwd Packets'])

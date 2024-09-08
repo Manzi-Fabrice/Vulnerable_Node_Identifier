@@ -23,11 +23,19 @@ def create_network_graph_from_csv(csv_path, min_flow_duration=10):
     df = pd.read_csv(csv_path)
     df.columns = df.columns.str.strip()
 
+<<<<<<< HEAD
     # Filtering short-lived connections
     filtered_df = df[df['Flow Duration'] >= min_flow_duration]
 
     for _, row in filtered_df.iterrows():
         src_port = row['Source Port']
+=======
+    # Filtering short lived connections
+    filtered_df = df[df['Flow Duration'] >= min_flow_duration]
+
+    for _, row in filtered_df.iterrows():
+        src_port = row['Destination Port']
+>>>>>>> 330106f (add lo cal changes to graph.py)
         dest_port = row['Destination Port']
 
         fwd_packets = int(row['Total Fwd Packets'])
@@ -41,5 +49,12 @@ def create_network_graph_from_csv(csv_path, min_flow_duration=10):
     return graph
 
 path = "/Users/manzifabriceniyigaba/Desktop/MachineLearningCVE/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv"
+<<<<<<< HEAD
 graph = create_network_graph_from_csv(path)
 graph.display()
+=======
+
+
+
+df.columns = df.columns.str.strip()
+>>>>>>> 330106f (add lo cal changes to graph.py)
